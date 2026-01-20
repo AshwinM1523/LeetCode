@@ -1,13 +1,8 @@
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
         
-        freq = {}
-
-        for num in nums:
-            if num not in freq:
-                freq[num] = 0
-            freq[num] += 1
+        count = Counter(nums)   
         
-        top_k_keys = heapq.nlargest(k, freq, key=freq.get)
+        top_k_keys = heapq.nlargest(k, count, key=count.get)
 
         return top_k_keys
