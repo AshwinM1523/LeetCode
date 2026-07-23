@@ -1,8 +1,11 @@
 class Solution:
     def largestAltitude(self, gain: List[int]) -> int:
         
-        prefix = [0]
+        cur = 0
+        high = cur
         for i in range(len(gain)):
-            prefix.append(prefix[-1] + gain[i])
+            cur += gain[i]
+
+            high = max(cur, high)
         
-        return max(prefix)
+        return high
