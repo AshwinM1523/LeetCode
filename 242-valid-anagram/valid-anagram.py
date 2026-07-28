@@ -1,9 +1,6 @@
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
         
-        if len(s) != len(t):
-            return False
-
         seen = {}
 
         for ch in s:
@@ -12,8 +9,12 @@ class Solution:
             seen[ch] += 1
         
         for ch in t:
-            if ch not in seen or seen[ch] == 0:
+            if ch not in seen:
                 return False
             seen[ch] -= 1
+        
+        for key, value in seen.items():
+            if value != 0:
+                return False
         
         return True
