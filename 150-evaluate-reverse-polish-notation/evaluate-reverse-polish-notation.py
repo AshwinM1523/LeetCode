@@ -19,4 +19,4 @@ class Solution:
             else:
                 stack.append(int(a / b))
 
-        return stack[-1]
+        return stack[0]
