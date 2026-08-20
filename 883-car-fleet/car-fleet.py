@@ -9,7 +9,6 @@ class Solution:
             time = (target - cars[i][0]) / cars[i][1]
             if stack and time <= stack[-1]:
                 continue
-            else:
-                stack.append(time)
+            stack.append(time)
         
         return len(stack)
