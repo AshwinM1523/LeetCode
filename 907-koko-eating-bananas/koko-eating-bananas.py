@@ -14,7 +14,7 @@ class Solution:
                 time += math.ceil(piles[i] / k)
             
             if time <= h:
-                ans = min(ans, k)
+                ans = k
                 right = k - 1
             else:
                 left = k + 1
