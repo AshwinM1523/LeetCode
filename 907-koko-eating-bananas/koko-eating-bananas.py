@@ -4,7 +4,6 @@ class Solution:
         left = 1
         right = max(piles)
         ans = float("inf")
-        piles.sort()
 
         while left <= right:
             k = (left + right) // 2
