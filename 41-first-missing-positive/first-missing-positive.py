@@ -5,7 +5,7 @@ class Solution:
         while i < len(nums):
             x = nums[i]
 
-            if x > 0 and x < len(nums) + 1 and nums[x-1] != x:
+            if x > 0 and x <= len(nums) and nums[x-1] != x:
                 nums[x-1], nums[i] = nums[i], nums[x-1]
             else:
                 i += 1
